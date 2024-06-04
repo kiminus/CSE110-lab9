@@ -69,27 +69,28 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button onclick="console_log('click demo')">Console Log</button>
+      <button onclick="console_err('error demo')">Console Error</button>
+      <button onclick="console_cnt('count')">Console Count</button>
+      <button onclick="console_warn('count')">Console Warn</button>
+      <button onclick="console_assert(Math.floor(Math.random()*10) % 2 == 0, 'number not even')">Console Assert</button>
+      <button onclick='console.clear()'>Console Clear</button>
+      <button onclick="console.dir(this)">Console Dir</button>
+      <button onclick="console.dirxml(this)">Console dirxml</button>
+      <button onclick="console.group()">Console Group Start</button>
+      <button onclick="console.groupEnd()">Console Group End</button>
+      <button
+        onclick="console.table([['name','question','status'],['Sam', 'what is Fourier transformation', 'resolved']])">Console
+        Table</button>
+      <button onclick="console.time()">Start Timer</button>
+      <button onclick="console.timeEnd()">End Timer</button>
+      <button onclick="console.timeStamp()">Console Trace</button>
+      <button onclick="console_undefinedFunc()">Trigger a Global Error</button>
     </section>
   </main>
 
   <script>
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
+    let form = document.querySelector(' form'); form.addEventListener('submit', e => {
       e.preventDefault();
       let output = document.querySelector('output');
       let firstNum = document.querySelector('#first-num').value;
@@ -102,6 +103,14 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+  </script>
+  <script src="main.js"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "1fe5f433bfc24415899b6ab2d93b6650"
+      // for more configuration options, see https://docs.trackjs.com
+    });
   </script>
 </body>
 
